@@ -1,0 +1,139 @@
+.header-button {
+  background-color: #fff;
+  font-family: $helvetica;
+  font-size: 18px;
+  color: $main-blue;
+  border-radius: $main-border-radius;
+  padding: 9px 22px;
+  cursor: pointer;
+  transition: border $basic-transition;
+}
+
+#header-section {
+  border-bottom: $main-grey-border;
+}
+
+header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6px;
+
+  #logo {
+    position: absolute;
+    left: 20px;
+    margin-right: 20px;
+
+    @media screen and (max-width:866px) {
+      position: relative;
+    }
+  }
+
+  .main-navigation, .authorization-block {
+    list-style-type: none;
+  }
+
+  @media screen and (max-width:866px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.main-navigation {
+  position: relative;
+  margin-right: 77px;
+  padding: 0;
+
+  &__item {
+    display: inline;
+  }
+
+  &__anchor {
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    padding: 0 15px;
+    transition: color $basic-transition;
+    &:hover{
+      color: $main-blue;
+    }
+  }
+
+  @media screen and (max-width:866px) {
+    margin-right: 0;
+  }
+}
+
+.authorization-block {
+  padding: 0;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__sign-up {
+    @extend  .header-button;
+    border: $main-blue-border;
+
+    &:hover {
+      background-color: $light-blue-hover;
+    }
+  }
+
+  &__login {
+    @extend  .header-button;
+    border: 1px solid transparent;
+    margin-right: 30px;
+
+    &:hover {
+      border: $main-blue-border;
+    }
+  }
+
+  &__language-selector {
+    vertical-align: middle;
+    display: inline-block;
+    padding: 9px 10px;
+    border: 1px solid $light-grey;
+    border-radius: $main-border-radius;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__selector {
+    position: absolute;
+    background-color: $light-blue-hover;
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    top: -4px;
+    left: -1px;
+    border: 1px solid $light-grey;
+    padding: 10px 3px 7px 8px;
+    border-radius: $main-border-radius;
+    transition: hover $basic-transition;
+
+    a:first-of-type {
+      margin-right: 5px;
+    }
+
+    img {
+      border: 1px solid $light-grey;
+      border-radius: $main-border-radius;
+      padding: 4px;
+      background-color: #fff;
+    }
+  }
+
+  @media (max-width:1199px) {
+      justify-self: flex-end;
+    }
+}
+
+.authorization-block__language-selector:hover .authorization-block__selector {
+  display: flex;
+}

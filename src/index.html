@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <title>PPMC</title>
+        <script src="scripts/hideShow.js"></script>
+    </head>
+    <body>
+        <section id="header-section">
+            <div class="container">
+                <header>
+                    <img id="logo" src="img/logo.png" alt="Logo">
+                    <ul class="main-navigation">
+                        <li class="main-navigation__item"><a class="main-navigation__anchor" href="">Главная</a></li>
+                        <li class="main-navigation__item"><a class="main-navigation__anchor" href="">Карта</a></li>
+                        <li class="main-navigation__item"><a class="main-navigation__anchor" href="">Парковки</a></li>
+                    </ul>
+                    <ul class="authorization-block">
+                        <li><button class="authorization-block__sign-up" type="button">Регистрация</button></li>
+                        <li><button class="authorization-block__login" type="button">Войти</button></li>
+                    </ul>
+                    <div class="authorization-block__language-selector">
+                        <img src="img/russian-language.png">
+                        <div id="language-selector" class="authorization-block__selector">
+                            <a href="index.html"><img src="img/russian-language.png"></a>
+                            <a href="english-index.html"><img src="img/english-language.png"></a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </section>
+        <section id="parking-places">
+            <div class="container">
+                <form id="parking-search-form">
+                    <ul class="form-container">
+                        <li class="form-container__additional-filters" id="filter-checkboxes" onclick="hideShow()">
+                            <span class="form-container__filter-label">Дополнительные параметры</span>
+                            <img id="form-icon" class="form-container__filter-icon" src="img/parking-places/additional-filters-icon.png">
+                        </li>
+                        <li>
+                            <select class="form-container__filter">
+                                <option>Сначала дешевые</option>
+                                <option>Сначала дорогие</option>
+                                <option>Сначала ближайшие</option>
+                                <option>Сначала свободные</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input class="form-container_search-field" type="text" placeholder="Страна, город, улица...">
+                        </li>
+                        <div id="checkbox-holder" class="form-container__checkbox-holder">
+                                <label class="form-container__checkbox-label">
+                                    <input type="checkbox">Месячные абонементы
+                                </label>
+                                <label class="form-container__checkbox-label">
+                                    <input type="checkbox">Почасовые парковки
+                                </label>
+                                <label class="form-container__checkbox-label">
+                                    <input type="checkbox">Бесплатные парковки
+                                </label>
+                                <label class="form-container__checkbox-label">
+                                    <input type="checkbox">Специальные предложения
+                                </label>
+                        </div>
+                    </ul>
+                    <button class="form-container__search-button" type="submit">Найти</button>
+                </form>
+                <div class="map-holder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31625.55018100332!2d27.568452799963133!3d53.90361390512181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sby!4v1555402456798!5m2!1sen!2sby" width="1160" height="510" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                </div>
+        </section>
+        <section id="locations">
+            <div class="container">
+                <div class="item-location">
+                    <img class="item-location__image" src="img/locations/location-pin.png">
+                    <ul>
+                        <li>
+                            <h3 class="item-location__headline">Ваше местоположение</h3>
+                        </li>
+                        <li>
+                            <p class="item-location__location-details">
+                                Latitude: 53.883541  Longitude: 27.604728
+                                Belarus, 220070 Minsk, Traktarazavodski pasiolak,
+                                ул. Олега Кошевого, 21
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item-location">
+                    <img class="item-location__image" src="img/locations/parking-icon.png">
+                    <ul class="test">
+                        <li>
+                            <h3 class="item-location__headline">Ближайшая парковка</h3></li>
+                        <li>
+                            <p class="item-location__location-details">
+                                Latitude: 53.883541  Longitude: 27.604728
+                                Belarus, 220070 Minsk, Traktarazavodski pasiolak,
+                                ул. Олега Кошевого, 21
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="special-offers">
+            <div class="container">
+                <h2 class="main-headline">Специальные предложения</h2>
+                <div class="special-offer-card">
+                    <div class="special-offer-card__streetview-container">
+                        <div id="special-offer-card__streetview"></div>
+                        <script src="scripts/panorama.js"></script>
+                        <script async defer
+                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initialize">
+                        </script>
+                    </div>
+                    <div class="special-offer-card__content">
+                        <span class="special-offer-card__offer-name">Stolle</span>
+                        <p class="special-offer-card_offer-description">
+                            Если вы закажете чудесный штрудель в нашем кафе, мы оплатим два часа
+                            Вашей парковки. Если парковка займет больше времени, то Вам будет
+                            необходимо доплатить.
+                        </p>
+                        <div class="special-offer-card__footer">
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/special-offers/gift-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">120 минут</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-offer-card">
+                    <div class="special-offer-card__streetview-container">
+                        <div class="special-offer-card__streetview"></div>
+                    </div>
+                    <div class="special-offer-card__content">
+                        <span class="special-offer-card__offer-name">Ресторан "Чайник под столом"</span>
+                        <p class="special-offer-card_offer-description">
+                            Если вы закажете чудесный штрудель в нашем кафе, мы оплатим два часа
+                            Вашей парковки. Если парковка займет больше времени, то Вам будет
+                            необходимо доплатить.
+                        </p>
+                        <div class="special-offer-card__footer">
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/special-offers/gift-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">60 минут</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="new-abonements">
+            <div class="container">
+                <h2 class="main-headline">Новые абонементы</h2>
+                <div class="special-offer-card">
+                    <div class="special-offer-card__streetview-container">
+                        <div class="special-offer-card__streetview"></div>
+                        <script src="scripts/panorama.js"></script>
+                        <script async defer
+                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initialize">
+                        </script>
+                    </div>
+                    <div class="special-offer-card__content">
+                        <span class="special-offer-card__offer-name">Гостиница "Мариот"</span>
+                        <p class="special-offer-card__address">
+                            Адрес: ул. Зыбицкая, 2
+                        </p>
+                        <div class="special-offer-card__footer">
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/calendar-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">30 дней</span>
+                            </div>
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/parking-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">62 места</span>
+                            </div>
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/guests-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">до 5 гостей</span>
+                            </div>
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/card-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">179 руб</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-offer-card">
+                    <div class="special-offer-card__streetview-container">
+                        <div class="special-offer-card__streetview"></div>
+                    </div>
+                    <div class="special-offer-card__content">
+                        <span class="special-offer-card__offer-name">ТЦ "Галлерея"</span>
+                        <p class="special-offer-card__address">
+                            Адрес: ул. Зыбицкая, 2
+                        </p>
+                        <div class="special-offer-card__footer">
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/calendar-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">30 дней</span>
+                            </div>
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/parking-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">62 места</span>
+                            </div>
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/guests-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">до 5 гостей</span>
+                            </div>
+                            <div class="special-offer-card__additional-info">
+                                <img class="special-offer-card__footer-icon" src="img/new-abonements/card-icon.png" alt="gift">
+                                <span class="special-offer-card__footer-description">249 руб</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="registration-block">
+            <div id="registration-block-background"></div>
+            <div class="container">
+                <div class="registration-card">
+                    <img class="registration-card__icon" src="img/registration-block/driver-icon.png" alt="Регистрация водителя">
+                    <div class="registration-card__content">
+                        <span class="registration-card__headline">Регистрация водителя</span>
+                        <p class="registration-card__description">
+                            Подключайтесь к нашей системе для удобного
+                            доступа на парковки Вашего города!
+                        </p>
+                        <button class="registration-card__more-button" type="button">Узнать больше</button>
+                        <button class="registration-card__continue-button" type="button">Продолжить</button>
+                    </div>
+                </div>
+                <div class="registration-card">
+                    <img class="registration-card__icon" src="img/registration-block/parking-icon.png" alt="Регистрация парковки">
+                    <div class="registration-card__content">
+                        <span class="registration-card__headline">Регистрация парковки</span>
+                        <p class="registration-card__description">
+                            Являетесь собственником парковки и хотите
+                            автоматизировать работу с пользователями?
+                        </p>
+                        <button class="registration-card__more-button" type="button">Узнать больше</button>
+                        <button class="registration-card__continue-button" type="button">Продолжить</button>
+                    </div>
+                </div>
+                <div class="registration-card">
+                    <img class="registration-card__icon" src="img/registration-block/food-icon.png" alt="Регистрация заведения питания">
+                    <div class="registration-card__content">
+                        <span class="registration-card__headline">Регистрация заведения</span>
+                        <p class="registration-card__description">
+                            Являетесь заведением общественного питания
+                            или культурного досуга и готовы к привлечению
+                            новых клиентов через наше партнерское предложение?
+                        </p>
+                        <button class="registration-card__more-button" type="button">Узнать больше</button>
+                        <button class="registration-card__continue-button" type="button">Продолжить</button>
+                    </div>
+                </div>
+                <div class="registration-card">
+                    <img class="registration-card__icon" src="img/registration-block/service-icon.png" alt="Регистрация обслуживающей компании">
+                    <div class="registration-card__content">
+                        <span class="registration-card__headline">Регистрация обслуживающей компании</span>
+                        <p class="registration-card__description">
+                            Занимаетесь созданием и обслуживанием
+                            систем парковок?
+                        </p>
+                        <button class="registration-card__more-button" type="button">Узнать больше</button>
+                        <button class="registration-card__continue-button" type="button">Продолжить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bottom">
+            <div class="container">
+                <footer>
+                    <span>&copy; PPMC, 2019</span>
+                </footer>
+            </div>
+        </section>
+    </body>
+</html>
