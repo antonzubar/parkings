@@ -11,51 +11,6 @@ body {
   box-sizing: border-box;
 }
 
-#locations {
-  background-color: #f6f7f9;
-  padding: 19px 0;
-}
-
-#locations .container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-#locations .container .item-location {
-  width: 405px;
-  display: flex;
-  position: relative;
-  align-content: center;
-  box-sizing: border-box;
-}
-
-.item-location ul {
-  margin: 0;
-  list-style-type: none;
-  padding-left: 15px;
-  padding-right: 20px;
-}
-
-.item-location__headline {
-  color: $main-blue;
-  font-size: 24px;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: $helvetica-bold;
-}
-
-#locations .container .item-location__image {
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.item-location__location-details {
-  color: $grey-font;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
 .main-headline {
   font-family: $helvetica-bold;
   color: $main-blue;
@@ -295,13 +250,6 @@ body {
 }
 
 @media screen and (max-width:866px) {
-
-  #locations .container .item-location:nth-child(1) {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid cornflowerblue;
-  }
-
   .special-offer-card {
     width: auto;
     padding-right: 14px;
