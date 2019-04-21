@@ -1,0 +1,103 @@
+.main-headline {
+  font-family: $helvetica-bold;
+  color: $main-blue;
+  font-size: 30px;
+  line-height: 40px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.special-offer-card {
+  width: 850px;
+  margin: 0 auto 20px;
+  position: relative;
+  padding: 10px 130px 10px 14px;
+  background: #ffffff;
+  border-radius: $main-border-radius;
+  box-shadow: 0 0  14px rgba(0,0,0,0.06);
+  box-sizing: border-box;
+
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+
+  &__streetview-container {
+    float: left;
+    width: 210px;
+    height: 160px;
+    margin-right: 30px;
+    background-color: gray;
+    border-radius: $main-border-radius;
+  }
+
+  &__content {
+    padding-top: 14px;
+  }
+
+  &__offer-name {
+    font-family: $helvetica-bold;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  &__offer-description {
+    color: $grey-font;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
+
+  &__additional-info {
+    margin-bottom: 16px;
+    display: flex;
+
+    @media screen and (max-width:600px) {
+      display: inline-block;
+    }
+  }
+
+  &__footer-icon {
+    align-self: center;
+  }
+
+  &__footer-description {
+    font-family: $helvetica-bold;
+    margin-left: 8px;
+    color: $main-blue;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: center;
+  }
+
+  &__address {
+    color: $grey-font;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 48px;
+  }
+
+  &__footer {
+    display: flex;
+
+    @media screen and (max-width:600px) {
+      clear: both;
+      display: block;
+      padding-top: 15px;
+    }
+  }
+
+  @media screen and (max-width:866px) {
+    width: auto;
+    padding-right: 14px;
+  }
+}
+
+#special-offer-card__streetview {
+  border-radius: $main-border-radius;
+  height: 100%;
+}
